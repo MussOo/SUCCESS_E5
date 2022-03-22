@@ -33,7 +33,7 @@
         location.reload();
       },
       async codeactif() {
-        const res = await fetch('http://localhost:3000/eval/');
+        const res = await fetch('http://10.0.52.54:3000/eval/');
         const data = await res.json();
         this.code = data;
        

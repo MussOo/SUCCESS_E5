@@ -30,7 +30,7 @@ import axios from 'axios';
         methods: {
             GetQuestions() {
 
-            axios.get('http://localhost:3000/getQuestionSugg')
+            axios.get('http://10.0.52.54:3000/getQuestionSugg')
             .then(response => (this.question = response.data))
                 .then(function (response) {
                     console.log(response);
@@ -44,7 +44,7 @@ import axios from 'axios';
                     "id": id
                 };
 
-                axios.post('http://localhost:3000/deleteQuestionsSugg', data)
+                axios.post('http://10.0.52.54:3000/deleteQuestionsSugg', data)
                 .then(function () {
                     location.reload();
                 })

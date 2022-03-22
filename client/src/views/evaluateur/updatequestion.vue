@@ -108,7 +108,7 @@
       },
       async QuestionUpdate() {
 
-        const res = await fetch('http://localhost:3000/Updatequestion/' + this.$route.params.id + '');
+        const res = await fetch('http://10.0.52.54:3000/Updatequestion/' + this.$route.params.id + '');
         const data = await res.json();
         this.questionUpdate = data;
         
@@ -124,7 +124,7 @@
           'bonne_reponse': this.bonne_reponse
         };
 
-        axios.post('http://localhost:3000/SendUpdatequestion/' + this.$route.params.id + '', data)
+        axios.post('http://10.0.52.54:3000/SendUpdatequestion/' + this.$route.params.id + '', data)
           .then(function () {
 
             window.history.back();

@@ -39,7 +39,7 @@
         },
         methods: {
             async listCollaborateur() {
-                const res = await fetch('http://localhost:3000/listCollaborateur');
+                const res = await fetch('http://10.0.52.54:3000/listCollaborateur');
                 const data = await res.json();
                 this.listC = data;
             },
@@ -49,7 +49,7 @@
                     "id_groupe": this.$route.params.id
                 };
 
-                axios.post('http://localhost:3000/evaluateur/AjoutCollaborateur', data)
+                axios.post('http://10.0.52.54:3000/evaluateur/AjoutCollaborateur', data)
 
                 window.history.back();
             }

@@ -102,7 +102,7 @@
           'bonne_reponse': this.bonne_reponse
         };
 
-        axios.post('http://localhost:3000/Creer_qcm/' + this.$route.params.id + '', data)
+        axios.post('http://10.0.52.54:3000/Creer_qcm/' + this.$route.params.id + '', data)
         window.history.back();
       }
     }

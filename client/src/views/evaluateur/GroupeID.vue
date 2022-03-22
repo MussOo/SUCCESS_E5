@@ -36,7 +36,7 @@
     methods: {
       async showmembres() {
 
-        const res = await fetch('http://localhost:3000/groupe/' + this.$route.params.id + '');
+        const res = await fetch('http://10.0.52.54:3000/groupe/' + this.$route.params.id + '');
         const data = await res.json();
         this.membres = data;
       },
@@ -46,7 +46,7 @@
           'id_groupe': this.$route.params.id
         };
 
-        axios.post('http://localhost:3000/evaluateur/deleteCollabGroupe', data)
+        axios.post('http://10.0.52.54:3000/evaluateur/deleteCollabGroupe', data)
           .then(function () {
 
             location.reload();

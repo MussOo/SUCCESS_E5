@@ -43,13 +43,13 @@
 
             async showcategorie() {
 
-                const res = await fetch('http://localhost:3000/categorie');
+                const res = await fetch('http://10.0.52.54:3000/categorie');
                 const data = await res.json();
                 this.categorie = data;
             },
             async deletecategorie(id) {
                 const data = {};
-                axios.post('http://localhost:3000/delete_categorie/' + id + '', data)
+                axios.post('http://10.0.52.54:3000/delete_categorie/' + id + '', data)
                 location.reload();
 
             }

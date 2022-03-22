@@ -31,7 +31,7 @@
           "nom_du_groupe": this.nom_du_groupe
         };
 
-        axios.post('http://localhost:3000/Creer_groupe', data)
+        axios.post('http://10.0.52.54:3000/Creer_groupe', data)
 
         window.history.back();
 

@@ -96,7 +96,7 @@
           "Userid": localStorage.UserID,
         };
 
-        axios.post('http://localhost:3000/collab/Checklist/' + this.$route.params.id + '', data)
+        axios.post('http://10.0.52.54:3000/collab/Checklist/' + this.$route.params.id + '', data)
           .then(function () {
             document.getElementById("buttonCOMMENCER").style.display = "block"
           })
@@ -113,7 +113,7 @@
           "Userid": localStorage.UserID,
         };
 
-        axios.post('http://localhost:3000/collab/StartQuizz/' + this.$route.params.id + '', data)
+        axios.post('http://10.0.52.54:3000/collab/StartQuizz/' + this.$route.params.id + '', data)
           .then(response => (this.question = response.data))
           .then(function (response) {
             
@@ -169,7 +169,7 @@
           'id_question': this.question.id_question
         };
 
-        axios.post('http://localhost:3000/collab/envoie_reponse/' + this.$route.params.id + '', data)
+        axios.post('http://10.0.52.54:3000/collab/envoie_reponse/' + this.$route.params.id + '', data)
           .then(function () {
             // handle error
             document.getElementById("checkbox").checked = false;
@@ -186,7 +186,7 @@
           'id_question': this.question.id_question
         };
 
-        axios.post('http://localhost:3000/collab/envoie_reponselibre/' + this.$route.params.id + '', data)
+        axios.post('http://10.0.52.54:3000/collab/envoie_reponselibre/' + this.$route.params.id + '', data)
           .then(function () {
             document.getElementById("checkbox").checked = false;
           })
