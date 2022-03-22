@@ -34,7 +34,7 @@
     },  
     methods: {
       deconnexion: function () {
-        localStorage.clear();
+        localStorage.clear(); 
         location.reload();
       },
       getCategorie() {
@@ -49,6 +49,7 @@
           .catch(function (err) {
 
             console.log(err);
+            console.log('t')
 
           })
       },
