@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "6234929e7455b41381b49da4"
+  },
+  "username": "admin",
+  "prenom": "Sebastien",
+  "nom": "Trionfini",
+  "password": "$2b$10$qabiG8iGtDjPoRfTqb.7aeR4ueQDi8PsWzLLG.mmLA/leuxKYMVhC",
+  "type_de_compte": "evaluateur",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62349324e88d67c4cae304aa"
+  },
+  "username": "collab",
+  "prenom": "Mustapha",
+  "nom": "Salmi",
+  "password": "$2b$10$JObpV5j5WSRYoZnBa4aVSewRDxNiETrjW9zXNu9Fl.4EWQ/LsBEwG",
+  "type_de_compte": "collaborateur",
+  "__v": 0
+}]

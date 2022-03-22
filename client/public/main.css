@@ -1,0 +1,200 @@
+body{
+  background-color: #BCDFFF;
+  font-family: Andale Mono, monospace;
+}
+
+
+/*                 Page login                 */ 
+.header{
+  display: flex;
+  justify-content: center;
+  background-color: #5FA4E3;
+}
+
+.contenuePrincipal{
+  display: flex;
+  justify-content: center;
+  margin-top: 15%;
+  height: 75%;
+  
+}
+
+.box_black_center{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: solid;
+  padding: 3%;
+  margin: 1%;
+  border-radius: 10px;
+  width: 30%;
+}
+
+.submit_login{
+  display: flex;
+  justify-content: right;
+  padding-top: 5%;
+}
+
+
+
+/*                 Page Acceuill                */
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+.header_account{
+  display: flex;
+  justify-content: center;
+  background-color: #5FA4E3;
+}
+
+.wrapper{
+display: flex;
+position: relative;
+}
+
+.wrapper .sidebar{
+width: 200px;
+height: 100%;
+background: #5FA4E3;
+padding: 30px 0px;
+position: fixed;
+}
+
+.wrapper .sidebar h2{
+color: rgb(0, 0, 0);
+text-transform: uppercase;
+text-align: center;
+margin-bottom: 30px;
+}
+
+.wrapper .sidebar ul li{
+padding: 15px;
+border-bottom: 1px solid #2100c5;
+border-bottom: 1px solid rgba(0,0,0,0.05);
+border-top: 1px solid rgba(255,255,255,0.05);
+}    
+
+.wrapper .sidebar ul li a{
+color: #003953;
+display: block;
+}
+
+.wrapper .sidebar ul li a .fas{
+width: 25px;
+}
+
+.wrapper .sidebar ul li:hover{
+background-color: #5FA4E3;
+}
+  
+.wrapper .sidebar ul li:hover a{
+color: #fff;
+}
+
+.wrapper .sidebar .social_media{
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+display: flex;
+}
+
+.wrapper .sidebar .social_media a{
+display: block;
+width: 40px;
+background: #5FA4E3;
+height: 40px;
+line-height: 45px;
+text-align: center;
+margin: 0 5px;
+color: #bdb8d7;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+}
+
+.wrapper .main_content{
+width: 100%;
+margin-left: 200px;
+}
+
+.wrapper .main_content .header{
+padding: 20px;
+background: #fff;
+color: #717171;
+border-bottom: 1px solid #e0e4e8;
+}
+
+.wrapper .main_content .info{
+margin: 20px;
+color: #717171;
+line-height: 25px;
+}
+
+.wrapper .main_content .info div{
+margin-bottom: 20px;
+}
+
+@media (max-height: 500px){
+.social_media{
+  display: none !important;
+}
+}
+
+.allcontenue{
+  background-color: #79B3F8;
+  border-radius: 15px;
+  position: fixed;
+  width: 87%;
+  margin-left: 12%;
+  margin-top: 2%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.sous-allcontenu{
+  display: flex;
+  width: 80%;
+}
+
+.sous-allcontenu-center{
+  display: flex;
+  justify-content: center;
+}
+
+.absolute-box{
+position: absolute;
+top: 500px; left: 500px;
+
+border: solid black;
+width: 50%;
+height: 50%;
+border-radius: 10px;
+background-color:white;
+}
+
+.contenue_tableau{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  
+}
+
+table,
+td {
+    border: 2px solid #333;
+    width: 80%;
+    font-size: 20px;
+}
+
+thead,
+tfoot {
+    background-color: rgb(19, 74, 175);
+    color: rgb(0, 0, 0);
+   font-size: 20px;
+}
+
