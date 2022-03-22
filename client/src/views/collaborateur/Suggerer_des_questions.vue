@@ -31,7 +31,7 @@
         categorie : Object,
         MessageErreurCode : false
       }
-    },
+    },  
     methods: {
       deconnexion: function () {
         localStorage.clear();
