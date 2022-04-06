@@ -44,20 +44,20 @@
 
             async showquizz() {
 
-                const res = await fetch('http://10.0.52.54:3000/quizz/' + this.$route.params.id + '');
+                const res = await fetch('http://localhost:3000/quizz/' + this.$route.params.id + '');
                 const data = await res.json();
                 this.quizz = data;
                 
             },
             async deletequizz(id) {
                 const data = {};
-                axios.post('http://10.0.52.54:3000/delete_quizz/' + id + '', data)
+                axios.post('http://localhost:3000/delete_quizz/' + id + '', data)
                 location.reload();
 
             },
             async GenereCode(id) {
                 const data = {};
-                axios.post('http://10.0.52.54:3000/generecode/' + id + '', data)
+                axios.post('http://localhost:3000/generecode/' + id + '', data)
                 
             }
         }

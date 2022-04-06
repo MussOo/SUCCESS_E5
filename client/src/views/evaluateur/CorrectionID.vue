@@ -32,7 +32,7 @@
         },
         methods: {
             async ListeCorrection() {
-                const res = await fetch('http://10.0.52.54:3000/CorrectionID/' + this.$route.params.titre_quizz +
+                const res = await fetch('http://localhost:3000/CorrectionID/' + this.$route.params.titre_quizz +
                 '');
                 const data = await res.json();
                 this.Quizz = data;

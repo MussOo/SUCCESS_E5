@@ -31,7 +31,7 @@
 
             async QuizzUpdate() {
 
-                const res = await fetch('http://10.0.52.54:3000/UpdateQuizz/' + this.$route.params.id_quizz + '');
+                const res = await fetch('http://localhost:3000/UpdateQuizz/' + this.$route.params.id_quizz + '');
                 const data = await res.json();
                 this.quizz = data;
     
@@ -43,7 +43,7 @@
                     'nom_quizz': this.quizzUp,
                 };
 
-                axios.post('http://10.0.52.54:3000/SendUpdatequizz/' + this.$route.params.id_quizz + '', data)
+                axios.post('http://localhost:3000/SendUpdatequizz/' + this.$route.params.id_quizz + '', data)
                     .then(function () {
 
                         window.history.back();

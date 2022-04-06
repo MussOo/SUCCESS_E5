@@ -25,7 +25,7 @@
     methods: {
       async statistique(){
 
-          const res = await fetch('http://10.0.52.54:3000/Evaluateur_Statistique');
+          const res = await fetch('http://localhost:3000/Evaluateur_Statistique');
           const data = await res.json();
           this.stat = data;
           

@@ -27,7 +27,9 @@ router.get('/Collaborateur_Statistique/:id_user', CollaborateurControler.Collabo
 //POST
 router.post('/envoiecode/:code/:Userid', CollaborateurControler.envoiecode);
 router.post('/collab/Checklist/:code', CollaborateurControler.Checklist);
+router.post('/collab/checkQuestions/:code', CollaborateurControler.checkQuestions);
 router.post('/collab/StartQuizz/:code', CollaborateurControler.StartQuizz);
+
 router.post('/collab/envoie_reponse/:code', CollaborateurControler.envoie_reponse);
 router.post('/collab/envoie_reponselibre/:code', CollaborateurControler.envoie_reponselibre);
 router.post('/collab/HistoryQuizz/', CollaborateurControler.ListHistoryQuizz);

@@ -26,7 +26,7 @@
         },
         methods: {
             async Correction() {
-                const res = await fetch('http://10.0.52.54:3000/ListCorrection');
+                const res = await fetch('http://localhost:3000/ListCorrection');
                 const data = await res.json();
                 this.Quizz = data;
       

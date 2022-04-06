@@ -46,7 +46,7 @@
         },
         methods: {
             async ListeCorrection() {
-                const res = await fetch('http://10.0.52.54:3000/CorrectionID/correction/' + this.$route.params
+                const res = await fetch('http://localhost:3000/CorrectionID/correction/' + this.$route.params
                     .titre_quizz + '/' + this.$route.params.id_listequestion + '');
                 const data = await res.json();
                 this.questionlibre = data;
@@ -66,7 +66,7 @@
 
                 const data = this.reponse;
 
-                axios.post('http://10.0.52.54:3000/correction/reponselibre/' + this.$route.params.id_listequestion +
+                axios.post('http://localhost:3000/correction/reponselibre/' + this.$route.params.id_listequestion +
                         '', data)
                     .then(function () {
                         console.log('envoyer')

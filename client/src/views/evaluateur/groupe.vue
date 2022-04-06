@@ -34,7 +34,7 @@
         },
         methods: {
             async ListGroupe() {
-                const res = await fetch('http://10.0.52.54:3000/groupe');
+                const res = await fetch('http://localhost:3000/groupe');
                 const data = await res.json();
                 this.groupe = data;
             },
@@ -44,7 +44,7 @@
                     "id_groupe": id
                 };
 
-                axios.post('http://10.0.52.54:3000/evaluateur/deleteGroupe', data)
+                axios.post('http://localhost:3000/evaluateur/deleteGroupe', data)
 
 
             }

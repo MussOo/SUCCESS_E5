@@ -63,7 +63,7 @@
           "id_listePasser": this.$route.params.listePasser,
         };
 
-        await axios.post('http://10.0.52.54:3000/collab/HistoryQuizz/Quizz', data)
+        await axios.post('http://localhost:3000/collab/HistoryQuizz/Quizz', data)
           .then(response => (this.detailsHistorique = response.data))
           .then(function (result) {
 

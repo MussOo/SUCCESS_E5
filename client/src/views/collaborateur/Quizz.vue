@@ -12,11 +12,8 @@
             
             <div>{{proposition}}</div> <input type="checkbox" id="checkbox" @click="addBR(k)">
           </div>
-          <div id="buttonsuivant" v-show="question.derniere === undefined">
-            <button @click="QuestionQCM() && StartQuizz();">suivante</button>
-          </div>
-          <div id="buttonquestionderniere" v-show="question.derniere === true">
-            <button @click="QuestionQCM() && CLOSE_PAGE()">VALIDER</button>
+          <div id="buttonsuivant">
+            <button @click="QuestionQCM()">suivante</button>
           </div>
         </div>
       </div>
@@ -30,16 +27,11 @@
           <input type="text" v-model="reponse">
         </div>
 
-        <div id="buttonsuivant" v-show="question.derniere === undefined">
-          <button @click="Questionlibre() && StartQuizz();" >suivante</button>
-        </div>
-        <div id="buttonquestiondernierelibre" v-show="question.derniere === true">
-            <button @click="Questionlibre() && CLOSE_PAGE()" >VALIDER</button>
+        <div id="buttonsuivant">
+          <button @click="Questionlibre()" >suivante</button>
         </div>
       </div>
-      <div>
-        <button @click="StartQuizz()" id="buttonCOMMENCER" style="display:none">COMMENCER</button>
-      </div>
+
 
     </div>
   </div>
@@ -62,7 +54,8 @@
       }
     },
     beforeMount() {
-      this.Checklist()
+      this.checkQuestions();
+      this.StartQuizz();
 
     },
     methods: {
@@ -90,21 +83,30 @@
         }
 
       },
-      async Checklist() {
-
+      async checkQuestions(){
+        
+        console.log('test start quizz')
         const data = {
           "Userid": localStorage.UserID,
         };
 
-        axios.post('http://10.0.52.54:3000/collab/Checklist/' + this.$route.params.id + '', data)
-          .then(function () {
-            document.getElementById("buttonCOMMENCER").style.display = "block"
-          })
-          .catch(function (error) {
-            // handle error
-            console.log(error);
-          })
+        axios.post('http://localhost:3000/collab/checkQuestions/' + this.$route.params.id + '', data)
+          .then(function (response) {
 
+              if(response.data.message === 'QUESTION_PRESENTE'){
+                console.log('QUESTION_PRESENTE')
+                
+              }
+
+              if(response.data.message === 'PLUS_DE_QUESTION'){
+                window.close();
+              }
+          
+          })
+          .catch(function (err) {
+            // handle error
+            console.log(err);
+          })
 
       },
       async StartQuizz() {
@@ -113,46 +115,21 @@
           "Userid": localStorage.UserID,
         };
 
-        axios.post('http://10.0.52.54:3000/collab/StartQuizz/' + this.$route.params.id + '', data)
+        axios.post('http://localhost:3000/collab/StartQuizz/' + this.$route.params.id + '', data)
           .then(response => (this.question = response.data))
           .then(function (response) {
-            
-            if (response.message === 'FIN_QUIZZ') {
-              window.close();
-              document.getElementById("QL").style.display = "none";
-              document.getElementById("QCM").style.display = "none";
-            } else {
+              
               if (response.QCM) {
                 
                 document.getElementById("QCM").style.display = "block";
                 document.getElementById("QL").style.display = "none";
-                document.getElementById("checkbox").checked = false;
-                document.getElementById("buttonCOMMENCER").style.display = "none"
               } else {
                 
                 document.getElementById("QL").style.display = "block";
                 document.getElementById("QCM").style.display = "none";
-                document.getElementById("buttonCOMMENCER").style.display = "none"
                 
               }
-            }
-
-            if(response.derniere === true){
-              if (response.QCM) {
-                document.getElementById("buttonquestionderniere").style.display = "block";
-                document.getElementById("buttonquestiondernierelibre").style.display = "none";
-                document.getElementById("buttonCOMMENCER").style.display = "none";
-                document.getElementById("buttonsuivant").style.display = "none";
-                
-                
-              } else {
-                document.getElementById("buttonquestiondernierelibre").style.display = "block";
-                document.getElementById("buttonquestionderniere").style.display = "none";
-                document.getElementById("buttonCOMMENCER").style.display = "none";
-                document.getElementById("buttonsuivant").style.display = "none";
-              }
-            }
-
+          
           })
           .catch(function (err) {
             // handle error
@@ -169,10 +146,13 @@
           'id_question': this.question.id_question
         };
 
-        axios.post('http://10.0.52.54:3000/collab/envoie_reponse/' + this.$route.params.id + '', data)
+        axios.post('http://localhost:3000/collab/envoie_reponse/' + this.$route.params.id + '', data)
           .then(function () {
             // handle error
-            document.getElementById("checkbox").checked = false;
+
+              document.getElementById("checkbox").checked = false;
+              location.reload();
+           
           })
 
         this.reponse = []
@@ -186,15 +166,12 @@
           'id_question': this.question.id_question
         };
 
-        axios.post('http://10.0.52.54:3000/collab/envoie_reponselibre/' + this.$route.params.id + '', data)
+        axios.post('http://localhost:3000/collab/envoie_reponselibre/' + this.$route.params.id + '', data)
           .then(function () {
-            document.getElementById("checkbox").checked = false;
+              location.reload();
           })
 
         this.reponse = []
-      },
-      async CLOSE_PAGE(){
-        window.close();
       }
     }
   };

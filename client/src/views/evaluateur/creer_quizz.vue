@@ -33,7 +33,7 @@
           "titre": this.titre
         };
 
-        axios.post('http://10.0.52.54:3000/Creer_quizz/' + this.$route.params.id + '', data)
+        axios.post('http://localhost:3000/Creer_quizz/' + this.$route.params.id + '', data)
           .then(function () {
 
             window.history.back();

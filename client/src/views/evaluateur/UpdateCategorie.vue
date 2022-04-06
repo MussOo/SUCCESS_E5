@@ -31,7 +31,7 @@
 
       async CategorieUpdate() {
 
-        const res = await fetch('http://10.0.52.54:3000/UpdateCategorie/' + this.$route.params.id_categorie + '');
+        const res = await fetch('http://localhost:3000/UpdateCategorie/' + this.$route.params.id_categorie + '');
         const data = await res.json();
         this.categorie = data;
         
@@ -43,7 +43,7 @@
           'nom_categorie': this.categorieUp,
         };
 
-        axios.post('http://10.0.52.54:3000/SendUpdatecategorie/' + this.$route.params.id_categorie + '', data)
+        axios.post('http://localhost:3000/SendUpdatecategorie/' + this.$route.params.id_categorie + '', data)
           .then(function () {
 
             window.history.back();

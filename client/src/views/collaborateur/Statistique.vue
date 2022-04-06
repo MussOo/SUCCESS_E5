@@ -28,7 +28,7 @@
     methods: {
       async statistique() {
 
-        const res = await fetch('http://10.0.52.54:3000/Collaborateur_Statistique/' + localStorage.UserID + '');
+        const res = await fetch('http://localhost:3000/Collaborateur_Statistique/' + localStorage.UserID + '');
         const data = await res.json();
         this.stat = data;
 

@@ -64,7 +64,7 @@
           }
         };
 
-        fetch("http://10.0.52.54:3000/auth", requestOpt)
+        fetch("http://localhost:3000/auth", requestOpt)
           .then((response) => response.json())
           .then((result) => {
             console.log(result)
@@ -92,7 +92,7 @@
     },
     mounted() {
       axios
-        .get('http://10.0.52.54:3000/listuser')
+        .get('http://localhost:3000/listuser')
         .then(response => (this.listuser = response.data))
     }
   }

@@ -209,7 +209,56 @@ module.exports.Checklist = async (req, res) => {
   });
 }
 
+module.exports.checkQuestions = async (req, res) => {
+  let code = req.params.code
+  let USER_ID = new ObjectID(req.body.Userid)
 
+  ListeQuestionPasser.aggregate([{
+    $match: {
+      code: code,
+      id_collaborateur: USER_ID
+    }
+  },
+  {
+    "$match": {
+      "question": {
+        "$elemMatch": {
+          "$and": [{
+            "passer": false
+          }, ]
+        }
+      },
+    }
+  },
+  {
+    "$project": {
+      "question": {
+        "$filter": {
+          "input": "$question",
+          "as": "question",
+          "cond": {
+            "$and": [{
+                "$eq": ["$$question.passer", false]
+              },
+
+            ]
+          }
+        }
+      }
+    }
+  }
+], {}, function (err, docs) {
+
+  console.log(docs)
+  if (docs.length == 0) {
+
+    res.status(200).send({message : 'PLUS_DE_QUESTION'});
+  }else{
+    res.status(200).send({message : 'QUESTION_PRESENTE'});
+  }
+});
+
+}
 module.exports.StartQuizz = async (req, res) => { // trouve la liste existant pour un collaborateur , choisi et envoie une question aleatoire au client.
 
   let code = req.params.code
