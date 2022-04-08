@@ -90,7 +90,7 @@
           "Userid": localStorage.UserID,
         };
 
-        axios.post('http://localhost:3000/collab/checkQuestions/' + this.$route.params.id + '', data)
+        axios.post('http://10.0.52.54:3000/collab/checkQuestions/' + this.$route.params.id + '', data)
           .then(function (response) {
 
               if(response.data.message === 'QUESTION_PRESENTE'){
@@ -115,7 +115,7 @@
           "Userid": localStorage.UserID,
         };
 
-        axios.post('http://localhost:3000/collab/StartQuizz/' + this.$route.params.id + '', data)
+        axios.post('http://10.0.52.54:3000/collab/StartQuizz/' + this.$route.params.id + '', data)
           .then(response => (this.question = response.data))
           .then(function (response) {
               
@@ -146,7 +146,7 @@
           'id_question': this.question.id_question
         };
 
-        axios.post('http://localhost:3000/collab/envoie_reponse/' + this.$route.params.id + '', data)
+        axios.post('http://10.0.52.54:3000/collab/envoie_reponse/' + this.$route.params.id + '', data)
           .then(function () {
             // handle error
 
@@ -166,7 +166,7 @@
           'id_question': this.question.id_question
         };
 
-        axios.post('http://localhost:3000/collab/envoie_reponselibre/' + this.$route.params.id + '', data)
+        axios.post('http://10.0.52.54:3000/collab/envoie_reponselibre/' + this.$route.params.id + '', data)
           .then(function () {
               location.reload();
           })

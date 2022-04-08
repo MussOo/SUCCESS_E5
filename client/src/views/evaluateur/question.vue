@@ -56,7 +56,7 @@
 
       async showquestion() {
 
-        const res = await fetch('http://localhost:3000/question/' + this.$route.params.id + '');
+        const res = await fetch('http://10.0.52.54:3000/question/' + this.$route.params.id + '');
         const data = await res.json();
         this.question = data;
       },
@@ -64,7 +64,7 @@
         const data = {
           "id_quizz": this.$route.params.id
         };
-        axios.post('http://localhost:3000/delete_question/' + id + '', data)
+        axios.post('http://10.0.52.54:3000/delete_question/' + id + '', data)
         location.reload();
       }
     }

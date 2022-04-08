@@ -36,7 +36,7 @@
             "Userid": localStorage.UserID,
             };
 
-            axios.post('http://localhost:3000/collab/HistoryQuizz', data)
+            axios.post('http://10.0.52.54:3000/collab/HistoryQuizz', data)
             .then(response => (this.ListHistory  = response.data))
             .catch(function (error) {
 

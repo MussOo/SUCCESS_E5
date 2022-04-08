@@ -32,7 +32,7 @@
           "titre": this.titre
         };
 
-        axios.post('http://localhost:3000/creer_categorie', data)
+        axios.post('http://10.0.52.54:3000/creer_categorie', data)
 
         window.history.back();
 

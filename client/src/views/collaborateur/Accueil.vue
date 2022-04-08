@@ -33,14 +33,14 @@
       },
       envoiecode() {
 
-       axios.post('http://localhost:3000/envoiecode/' + this.codesession + '/' + localStorage.UserID + '')
+       axios.post('http://10.0.52.54:3000/envoiecode/' + this.codesession + '/' + localStorage.UserID + '')
           .then(function (response) {
 
             const data = {
               "Userid": localStorage.UserID,
             };
 
-          axios.post('http://localhost:3000/collab/Checklist/' + response.data[0].code + '', data)
+          axios.post('http://10.0.52.54:3000/collab/Checklist/' + response.data[0].code + '', data)
           .then(function () {
 
           let url = window.location.protocol + "//" + window.location.host + window.location.pathname + 'quizz/';

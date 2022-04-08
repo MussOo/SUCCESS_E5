@@ -36,7 +36,7 @@ import axios from 'axios';
           'id_question':this.question.id_question
         };
 
-        axios.post('http://localhost:3000/collab/envoie_reponselibre/' + this.$route.params.id + '', data)
+        axios.post('http://10.0.52.54:3000/collab/envoie_reponselibre/' + this.$route.params.id + '', data)
         .then(function () {
             // handle error
         })

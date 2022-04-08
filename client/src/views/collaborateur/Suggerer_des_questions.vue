@@ -39,7 +39,7 @@
       },
       getCategorie() {
 
-       axios.get('http://localhost:3000/categorie')
+       axios.get('http://10.0.52.54:3000/categorie')
        .then(response => (this.categorie = response.data))
           .then(function (response) {
 
@@ -61,7 +61,7 @@
             "sujet": this.sujet
         };
 
-        axios.post('http://localhost:3000/collab/envoieQuestionsSuggerer', data)
+        axios.post('http://10.0.52.54:3000/collab/envoieQuestionsSuggerer', data)
         .then(function () {
 
               document.getElementById('question').value = ''
